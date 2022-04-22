@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
-import { SingIn } from './SIngIn/SingIn';
-import { SingUp } from './SIngUp/SingUp';
+import React from 'react';
+import { useLocation } from 'react-router';
+import { Outlet, useNavigate } from 'react-router';
 import { AuthContainer } from './Styles';
 
 export const AuthPage = () => {
-    const [showSingUp, setSingUpDissapear] = useState(true);
+	const navigate = useNavigate();
+	const location = useLocation();
 
-    const changeSingUpOnSingIn = () => setSingUpDissapear(!showSingUp);
-    return (
-        <AuthContainer>
-            <SingUp changeSingUpOnSingIn={changeSingUpOnSingIn} showSingUp={showSingUp} />
-            <SingIn changeSingUpOnSingIn={changeSingUpOnSingIn} showSingUp={showSingUp} />
-        </AuthContainer>
-    );
+	const redirectToStartPage = () => {
+		navigate('../news', { replace: true });
+	};
+
+	const changeSingUpOnSingIn = () => {
+		location.pathname === '/auth/login' ? navigate('register') : navigate('login');
+	};
+	return (
+		<AuthContainer>
+			<Outlet context={{ redirectToStartPage, changeSingUpOnSingIn }} />
+		</AuthContainer>
+	);
 };

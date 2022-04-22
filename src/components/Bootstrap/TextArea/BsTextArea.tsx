@@ -1,26 +1,21 @@
-import { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { BsInputProps } from './Types';
+import { BsInputProps } from '../Input/Types';
 
-export const BsInput = ({ labelText, placeholder, type = 'text', validate, validateText, onChange, value }: BsInputProps) => {
-	const [valid, setValid] = useState(true);
-
+export const BsTextArea = ({ labelText, placeholder, type = 'text', validateText, onChange, value }: BsInputProps) => {
 	const changeHandler = target => {
 		const value = target.currentTarget.value;
 		onChange && onChange(value);
-		validate && setValid(validate(value));
 	};
 
 	return (
-		<Form.Group controlId="exampleForm.ControlInput1">
+		<Form.Group controlId="exampleForm.ControlTextarea1" style={{ width: '100%' }}>
 			<Form.Label>{labelText}</Form.Label>
 			<Form.Control
-				isValid={valid}
-				isInvalid={!valid}
-				htmlSize={100}
+				as={'textarea'}
 				type={type}
 				placeholder={placeholder}
 				onChange={changeHandler}
+				style={{ minHeight: '150px' }}
 				value={value}
 			/>
 			<Form.Control.Feedback type="invalid">{validateText}</Form.Control.Feedback>

@@ -28,8 +28,7 @@ const AuthAppearAnimation = keyframes`
 `;
 
 export const SingInContainer = styled(SingContainer)`
-    animation: ${({ showSingUp }) => (showSingUp ? AuthDisappearAnimation : AuthAppearAnimation)} 1s forwards;
-    background: url(${singInImg}) no-repeat center center fixed;
-    float: right;
-    opacity: 0;
+	animation: ${AuthAppearAnimation} 1s forwards;
+	background: url(${singInImg}) no-repeat center center fixed;
+	float: right;
 `;
