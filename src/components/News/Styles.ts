@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 import { Flex } from '../../layout/Flex';
+import authImg from '../../images/auth.jpg';
+
+export const SiteContainer = styled.div`
+	width: 100%;
+	background: url(${authImg}) no-repeat center center fixed;
+	background-size: cover;
+`;
 
 export const NewsListWrapper = styled(Flex)`
 	min-height: 100vh;

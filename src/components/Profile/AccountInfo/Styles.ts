@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const AccountInfoBlock = styled.div`
 	min-width: 30%;
-	background-color: #6d4c41;
-	color: white;
 `;
 
 export const AccountInfoTitle = styled.p`

@@ -7,8 +7,7 @@ export class LocalStorageService {
 	public static set = (key: string, value: any) => LocalStorageService.update({ [key]: value });
 
 	public static remove = (keyName: string) => {
-		const data = LocalStorageService.data;
-		delete data[keyName];
+		const { [keyName]: deleteField, ...data } = LocalStorageService.data;
 		localStorage.setItem(StorageKeys.websiteData, JSON.stringify(data));
 	};
 
