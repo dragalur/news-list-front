@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router';
 import { User } from '../../../configs/Types';
 import { NewsDTO } from '../../../provider/NewsProvider/News.dto';
 import { NewsProvider } from '../../../provider/NewsProvider/NewsProvider';
 import { DateService } from '../../../services/Date';
 import { LocalStorageService } from '../../../services/storage/LocalStorage';
+import { TextFormatter } from '../../../services/TextFormatter';
+import { Loader } from '../../Loader/Loader';
 import { CreateNewText } from '../CreateNew/Instruction/Styles';
 import { ButtonBlock, CreateNewTitle } from '../CreateNew/Styles';
-import { SpinerClass } from '../ListNews/Styles';
 import { ReadHeaderText, ReadNewHeader, ReadNewWrapper } from './Styles';
 import { ReadNewsParams } from './Types';
 
@@ -34,9 +35,7 @@ export const ReadNew = () => {
 	return (
 		<ReadNewWrapper>
 			{loading ? (
-				<ButtonBlock>
-					<Spinner animation="border" style={SpinerClass} />
-				</ButtonBlock>
+				<Loader />
 			) : (
 				<>
 					<ReadNewHeader>
@@ -46,7 +45,7 @@ export const ReadNew = () => {
 						<ReadHeaderText>Created by: {authorName}</ReadHeaderText>
 					</ReadNewHeader>
 					<CreateNewTitle>{title}</CreateNewTitle>
-					<CreateNewText>{text}</CreateNewText>
+					<CreateNewText dangerouslySetInnerHTML={{ __html: TextFormatter.format(text) }}>{}</CreateNewText>
 					{isUserOwner() && (
 						<ButtonBlock>
 							<Button onClick={redirectToEditPage}>Edit post</Button>

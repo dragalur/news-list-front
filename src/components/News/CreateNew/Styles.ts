@@ -28,5 +28,6 @@ export const CreateNewText = styled.p`
 export const ButtonBlock = styled(Flex)`
 	width: 30%;
 	margin: auto;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 30px;
 `;

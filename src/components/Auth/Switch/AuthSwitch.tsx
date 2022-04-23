@@ -1,4 +1,4 @@
-import { ArrowImg, SingUpSwitchBlock, SwitchLabel } from './Styles';
+import { SingUpSwitchBlock, SwitchLabel } from './Styles';
 import arrowIng from '../../../images/arrow.svg';
 import { AuthSwitchProps } from './Types';
 import { useOutletContext } from 'react-router-dom';
@@ -10,7 +10,7 @@ export const AuthSwitch = ({ isRight, switchText }: AuthSwitchProps) => {
 	return (
 		<SingUpSwitchBlock isRight={isRight} onClick={changeSingUpOnSingIn}>
 			<SwitchLabel>{switchText}</SwitchLabel>
-			<ArrowImg isRight={isRight} src={arrowIng} />
+			{/* <ArrowImg isRight={isRight} src={arrowIng} /> */}
 		</SingUpSwitchBlock>
 	);
 };

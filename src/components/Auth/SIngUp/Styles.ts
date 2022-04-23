@@ -1,17 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { SingContainer } from '../Styles';
-import singUpImg from '../../../images/singUp.png';
-
-const AuthDisappearAnimation = keyframes`
-    0% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(100%);
-    }
-`;
 
 const AuthAppearAnimation = keyframes`
     0% {
@@ -26,6 +14,7 @@ const AuthAppearAnimation = keyframes`
 
 export const SingUpContainer = styled(SingContainer)`
 	animation: ${AuthAppearAnimation} 1s;
-	background: url(${singUpImg}) no-repeat center center fixed;
-	float: left;
+	border-radius: 20px;
+	background-color: #00acc1;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 `;

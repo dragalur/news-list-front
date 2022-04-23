@@ -15,19 +15,21 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="" element={<Navigate to="/auth/login" />} />
-				<Route path="/auth" element={<AuthPage />}>
-					<Route path="login" element={<SingIn />} />
-					<Route path="register" element={<SingUp />} />
-				</Route>
-				<Route path="/news" element={<PrivateRoute element={<SiteBlock />} />}>
-					<Route path="" element={<ListNews />} />
-					<Route path="create" element={<CreateNew />} />
-					<Route path=":idNews" element={<ReadNew />} />
-					<Route path=":idNews/edit" element={<EditPost />} />
-				</Route>
-				<Route path="/profile" element={<PrivateRoute element={<SiteBlock />} />}>
-					<Route path="" element={<Profile />} />
+				<Route path="">
+					<Route path="" element={<Navigate to="/auth/login" />} />
+					<Route path="/auth" element={<AuthPage />}>
+						<Route path="login" element={<SingIn />} />
+						<Route path="register" element={<SingUp />} />
+					</Route>
+					<Route path="/news" element={<PrivateRoute element={<SiteBlock />} />}>
+						<Route path="" element={<ListNews />} />
+						<Route path="create" element={<CreateNew />} />
+						<Route path=":idNews" element={<ReadNew />} />
+						<Route path=":idNews/edit" element={<EditPost />} />
+					</Route>
+					<Route path="/profile" element={<PrivateRoute element={<SiteBlock />} />}>
+						<Route path="" element={<Profile />} />
+					</Route>
 				</Route>
 			</Routes>
 		</BrowserRouter>

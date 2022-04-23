@@ -1,17 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { SingContainer } from '../Styles';
-import singInImg from '../../../images/singIn.png';
-const AuthDisappearAnimation = keyframes`
-    0% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-100%);
-        display: none;
-    }
-`;
 
 const AuthAppearAnimation = keyframes`
     0% {
@@ -29,6 +17,4 @@ const AuthAppearAnimation = keyframes`
 
 export const SingInContainer = styled(SingContainer)`
 	animation: ${AuthAppearAnimation} 1s forwards;
-	background: url(${singInImg}) no-repeat center center fixed;
-	float: right;
 `;

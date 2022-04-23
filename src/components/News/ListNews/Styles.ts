@@ -18,5 +18,3 @@ export const NewsListWrapper = styled(NewsWrapper)`
 	gap: 20px;
 	flex-wrap: wrap;
 `;
-
-export const SpinerClass = { width: '10rem', height: '10rem' };

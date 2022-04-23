@@ -1,5 +1,5 @@
 import { APIProvider } from '../ApiProvider';
-import { NewsCreateDTO, NewsDTO } from './News.dto';
+import { NewsCreateDTO, NewsDTO, UserNewsDTO } from './News.dto';
 
 export class NewsProvider extends APIProvider {
 	static instance = new NewsProvider();
@@ -22,5 +22,9 @@ export class NewsProvider extends APIProvider {
 
 	public deletePost = (_id: string) => {
 		return this.delete(this.getRequestUrl(`news/${_id}`));
+	};
+
+	public getUserPosts = (userId: string) => {
+		return this.get<UserNewsDTO[]>(this.getRequestUrl(`news/user/${userId}`));
 	};
 }

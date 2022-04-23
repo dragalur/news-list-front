@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import { Flex } from '../../layout/Flex';
 import { SingProps } from './Types';
-import authImg from '../../images/auth.png';
+import authImg from '../../images/auth.jpg';
 
-export const AuthContainer = styled.div`
+export const AuthContainer = styled(Flex)`
 	width: 100wh;
 	height: 100vh;
+	justify-content: center;
 	background: url(${authImg}) no-repeat center center fixed;
+	background-size: cover;
 `;
 
 export const AuthLabel = styled.p`
@@ -16,12 +18,13 @@ export const AuthLabel = styled.p`
 
 export const SingContainer = styled(Flex)<Omit<SingProps, 'changeSingUpOnSingIn' | 'redirect'>>`
 	flex-direction: column;
-	height: 100%;
 	width: 30%;
-	background: white;
-	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	padding-top: 5px;
 	transition: 1s;
 	animation-fill-mode: forwards;
+	border: 2px solid white;
+	border-radius: 20px;
+	background-color: #00acc1;
 	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 `;

@@ -12,4 +12,5 @@ export const CreateNewTitle = styled.p`
 
 export const CreateNewText = styled.p`
 	font-size: 1.1rem;
+	text-align: justify;
 `;

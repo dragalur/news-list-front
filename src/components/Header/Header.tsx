@@ -15,12 +15,12 @@ export const Header = () => {
 				<Navbar.Brand>Newlist</Navbar.Brand>
 				<Nav className="me-auto">
 					<Nav.Link>
-						<Link style={LinkClass} to="">
+						<Link style={LinkClass} to="../news">
 							Home
 						</Link>
 					</Nav.Link>
 					<Nav.Link>
-						<Link style={LinkClass} to="create">
+						<Link style={LinkClass} to="../news/create">
 							Create new
 						</Link>
 					</Nav.Link>

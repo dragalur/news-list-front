@@ -15,7 +15,7 @@ export const BsTextArea = ({ labelText, placeholder, type = 'text', validateText
 				type={type}
 				placeholder={placeholder}
 				onChange={changeHandler}
-				style={{ minHeight: '150px' }}
+				style={{ minHeight: '150px', maxHeight: '400px', whiteSpace: 'pre-line' }}
 				value={value}
 			/>
 			<Form.Control.Feedback type="invalid">{validateText}</Form.Control.Feedback>

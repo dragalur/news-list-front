@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router';
 import { NewsProvider } from '../../../provider/NewsProvider/NewsProvider';
 import { BsInput } from '../../Bootstrap/Input/BsInput';
 import { BsTextArea } from '../../Bootstrap/TextArea/BsTextArea';
-import { SpinerClass } from '../ListNews/Styles';
+import { Loader } from '../../Loader/Loader';
 import { ReadNewsParams } from '../ReadNew/Types';
 import { ButtonBlock, CreateNewTitle, CreateNewWrapper } from './Styles';
 
@@ -33,9 +33,7 @@ export const EditPost = () => {
 	return (
 		<CreateNewWrapper>
 			{loading ? (
-				<ButtonBlock>
-					<Spinner animation="border" style={SpinerClass} />
-				</ButtonBlock>
+				<Loader />
 			) : (
 				<>
 					<CreateNewTitle>Edit post</CreateNewTitle>

@@ -10,3 +10,8 @@ export type NewsDTO = NewsCreateDTO & {
 	_id: string;
 	updatedAt: Date;
 };
+
+export interface UserNewsDTO {
+	_id: string;
+	title: string;
+}
