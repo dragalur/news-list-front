@@ -24,12 +24,6 @@ export const SingUpSwitchBlock = styled(Flex)<AuthSwitchCssProps>`
     }
 `;
 
-// export const ArrowImg = styled.img<AuthSwitchCssProps>`
-// 	width: 25px;
-// 	height: 25px;
-// 	transform: ${({ isRight }) => (isRight ? 'rotate(0)' : 'rotate(180deg)')};
-// `;
-
 export const SwitchLabel = styled.p`
 	font-size: 22px;
 	margin: 0;
